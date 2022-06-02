@@ -1,2 +1,2 @@
 #!/bin/bash
-cc -c $CFILE -o $CFILE | tr ".c" ".o"
+cc -c $CFILE -o main.o
