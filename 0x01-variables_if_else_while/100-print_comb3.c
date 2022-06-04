@@ -17,14 +17,17 @@ int main(void)
 		{
 			if (a != b)
 			{
-				putchar(a);
-				putchar(b);
+				if (a < b)
+				{
+					putchar(a);
+					putchar(b);
 
-				if (a == '8' && b == '9')
-					break;
+					if (a == '8' && b == '9')
+						break;
 
-				putchar(',');
-				putchar(' ');
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
