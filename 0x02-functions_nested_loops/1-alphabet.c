@@ -1,9 +1,8 @@
 #include "main.h"
 
-/*
-* function that prints a-z
-*
-*/
+/**
+ * print_alphabet - prints alphabet a-z.
+ */
 
 void print_alphabet(void)
 {
