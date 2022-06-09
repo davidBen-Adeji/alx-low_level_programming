@@ -16,7 +16,7 @@ double largest_number(double a, double b, double c)
 	{
 		largest = a;
 	}
-	else if (b > a && b > c)
+	else if (b > c)
 	{
 		largest = b;
 	}
