@@ -1,6 +1,5 @@
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
 * print_numbers - function that prints numbers followed by a new line
