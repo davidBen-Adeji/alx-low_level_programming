@@ -82,7 +82,7 @@ char **strtow(char *str)
 		}
 	}
 
-	new_string[i] = '\0';
+	new_string[i] = NULL;
 
 	return (new_string);
 }

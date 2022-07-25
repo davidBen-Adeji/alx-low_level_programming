@@ -13,7 +13,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *new_string, *aux_s1 = s1, *aux_s2 = s2;
 	unsigned int i, len_s1 = 0, len_s2 = 0;
 
-	if (s1 == NULL)
+	if (s1 == NULL && s2 == NULL)
+	{
+		new_string = malloc(sizeof(char) * 1);
+		*new_string = '\0';
+		return (new_string);
+	}
+	else if (s1 == NULL)
 		s1 = "";
 	else if (s2 == NULL)
 		s2 = "";
@@ -40,6 +46,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	new_string[i] = '\0';
-
 	return (new_string);
 }
