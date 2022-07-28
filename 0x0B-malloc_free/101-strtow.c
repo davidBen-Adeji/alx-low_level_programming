@@ -18,7 +18,7 @@ char **strtow(char *str)
 	{
 		if (str[m] != ' ' || str[m] != '\t')
 		{
-			if (str[m + 1] == ' ' || str[m + 1] == '\t')
+			if (str[m + 1] == ' ' || str[m + 1] == '\t' || str[m + 1] == '\0')
 				len++;
 		}
 		m++;
@@ -41,7 +41,7 @@ char **strtow(char *str)
 			if (str[m] != ' ' || str[m] != '\t')
 			{
 			a_len++;
-			if (str[m + 1] == ' ' || str[m + 1] == '\t')
+			if (str[m + 1] == ' ' || str[m + 1] == '\t' || str[m + 1] == '\0')
 			{
 			m++;
 			break;
