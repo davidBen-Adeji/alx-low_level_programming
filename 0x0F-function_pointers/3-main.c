@@ -9,7 +9,6 @@
 */
 int main(int argc, char **argv)
 {
-	int a = atoi(argv[1]), b = atoi(argv[3]);
 	int (*result)(int, int);
 
 	if (argc != 4)
@@ -17,7 +16,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	switch (argv[2][0])
+	switch (*(argv[2]))
 	{
 		case '+':
 		break;
@@ -38,12 +37,13 @@ int main(int argc, char **argv)
 			printf("Error\n");
 			exit(99);
 	}
-	if ((argv[2][0] == '/' && b == 0) || (argv[2][0] == '%' && b == 0))
+	if ((*(argv[2]) == '/' && *(argv[3]) == '0') ||
+		(*(argv[2]) == '%' && *(argv[3]) == '0') || *(argv[2] + 1) != '\0')
 	{
 		printf("Error\n");
 		exit(100);
 	}
 	result = get_op_func(argv[2]);
-	printf("%d\n", result(a, b));
+	printf("%d\n", result(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
