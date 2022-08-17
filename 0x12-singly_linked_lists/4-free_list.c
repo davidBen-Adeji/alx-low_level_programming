@@ -3,7 +3,7 @@
 
 /**
 * free_list - function that frees elements in a linked list
-* @h: head of the list
+* @head: head of the list
 * Return: nothing
 */
 void free_list(list_t *head)
