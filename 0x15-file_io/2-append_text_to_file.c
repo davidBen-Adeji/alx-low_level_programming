@@ -4,7 +4,7 @@
 /**
 * append_text_to_file - function to append a text to a file
 * @filename: name of file
-* text_content: text to be appended
+* @text_content: text to be appended
 * Return: 1 on success, -1 on failure
 */
 
