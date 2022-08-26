@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	buff = create_buff(argv[2]);
 	fd_from = open(argv[1], O_RDONLY);
 	rd = read(fd_from, buff, 1024);
-	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0600);
 
 	do {
 		if (fd_from == -1 || rd == -1)
@@ -44,12 +44,13 @@ int main(int argc, char **argv)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
+			close_file(fd_from);
 			free(buff);
 			exit(99);
 		}
 
 		rd = read(fd_from, buff, 1024);
-		fd_to = open(argv[2], O_WRONLY | O_APPEND);
+		fd_to = open(argv[2], O_RDWR | O_APPEND);
 		} while (rd < 0);
 
 	free(buff);
